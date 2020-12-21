@@ -1,0 +1,50 @@
+{
+  "name": "nteract.io",
+  "description": "The server for nteract.io",
+  "version": "2.0.0",
+  "author": "nteract contributors",
+  "bugs": {
+    "url": "https://github.com/nteract/nteract.io/issues"
+  },
+  "dependencies": {
+    "express": "4.17.1",
+    "isomorphic-fetch": "2.2.1",
+    "mdi-react": "4.4.0",
+    "next": "8.1.0",
+    "polished": "3.6.3",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-fns": "1.4.0",
+    "react-syntax-highlighter": "9.0.1",
+    "styled-components": "5.1.0"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "1.10.7",
+    "babel-plugin-transform-flow-strip-types": "6.22.0",
+    "flow-bin": "0.84.0",
+    "graphql-request": "1.8.2",
+    "lint-staged": "10.2.6",
+    "prettier": "2.0.5"
+  },
+  "homepage": "https://github.com/nteract/nteract.io#readme",
+  "license": "BSD-3-Clause",
+  "lint-staged": {
+    "./**/*.js": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nteract/nteract.io.git"
+  },
+  "scripts": {
+    "now-build": "npm run build",
+    "prebuild": "node fetch-members.js",
+    "build": "next build",
+    "dev": "npm run prebuild && node server.js",
+    "flow": "flow",
+    "prettier": "prettier --write './**/*.js'",
+    "start": "NODE_ENV=production node server.js"
+  }
+}
