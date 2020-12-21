@@ -3,7 +3,6 @@
   "alias": "nteract.io",
   "build": {
     "env": {
-      "GH_TOKEN": "@gh-token-public"
     }
   },
   "version": 2,
